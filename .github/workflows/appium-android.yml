@@ -35,7 +35,7 @@ jobs:
       with:
         api-level: ${{ matrix.api-level }}
         target: ${{ matrix.target }}
-        arch: x86_64
+        arch: x86
         profile: Nexus 6
         disable-animations: true
         script: mvn clean test -P android
