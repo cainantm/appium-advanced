@@ -19,6 +19,7 @@ jobs:
         uses: actions/setup-java@v4
         with:
           java-version: '17'
+          distribution: 'temurin'
       - uses: actions/setup-node@v4.3.0
         with:
           node-version: '22.11.0'
