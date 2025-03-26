@@ -16,7 +16,7 @@ public class TestBase extends AbstractTestNGCucumberTests {
     public static void AndroidSetup () throws MalformedURLException {
         DesiredCapabilities caps = new DesiredCapabilities();
         caps.setCapability("appium:platformName", "Android");
-        caps.setCapability("appium:platformVersion", "16.0");
+        caps.setCapability("appium:platformVersion", "11.0");
         caps.setCapability("appium:automationName", "UiAutomator2");
         caps.setCapability("appium:deviceName", "Android Emulator");
         caps.setCapability("appium:app", "C:\\Users\\caina\\OneDrive\\Desktop\\Appium\\Appium-Advanced\\apps\\ToDo_1.24_APKPure.apk");
