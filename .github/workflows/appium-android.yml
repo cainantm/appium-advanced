@@ -28,13 +28,28 @@ jobs:
     - run: |
             npm install -g appium
             appium driver install uiautomator2
-            appium &
-            sleep 10
-    - name: Run appium tests
+
+    - name: Start Android Emulator
       uses: ReactiveCircus/android-emulator-runner@v2.33.0
       with:
         api-level: ${{ matrix.api-level }}
         target: ${{ matrix.target }}
         arch: x86_64
         profile: Nexus 6
-        script: mvn clean test -P android
+        disable-animations: true
+        script: echo "Emulator started"
+
+    - name: Wait for ADB device
+      run: |
+        echo "Waiting for emulator to be ready..."
+        adb wait-for-device shell 'while [[ -z $(getprop sys.boot_completed) ]]; do sleep 1; done;'
+        adb devices
+        echo "Emulator is ready!"
+
+    - name: Start Appium
+      run: |
+            appium &>/dev/null &
+            sleep 10
+
+    - name: Run Appium Tests
+      run: mvn clean test -P android
