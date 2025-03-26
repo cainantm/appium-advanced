@@ -1,4 +1,4 @@
-name: Appium Android
+name: Appium Android Linux
 
 on:
   push:

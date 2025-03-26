@@ -1,4 +1,4 @@
-name: Appium Android
+name: Appium Android MacOS
 
 on:
   push:
@@ -35,7 +35,7 @@ jobs:
       with:
         api-level: ${{ matrix.api-level }}
         target: ${{ matrix.target }}
-        arch: x86
+        arch: x86_64
         profile: Nexus 6
         disable-animations: true
         script: mvn clean test -P android
