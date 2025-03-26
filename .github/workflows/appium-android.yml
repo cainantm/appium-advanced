@@ -34,17 +34,10 @@ jobs:
       with:
         api-level: ${{ matrix.api-level }}
         target: ${{ matrix.target }}
-        arch: x86_64
-        profile: Nexus 6
+        arch: arm64-v8a
+        profile: pixel_4
         disable-animations: true
         script: echo "Emulator started"
-
-    - name: Wait for ADB device
-      run: |
-        echo "Waiting for emulator to be ready..."
-        adb wait-for-device shell 'while [[ -z $(getprop sys.boot_completed) ]]; do sleep 1; done;'
-        adb devices
-        echo "Emulator is ready!"
 
     - name: Start Appium
       run: |
