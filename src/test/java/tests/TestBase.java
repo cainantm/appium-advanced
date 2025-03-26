@@ -20,6 +20,8 @@ public class TestBase extends AbstractTestNGCucumberTests {
         caps.setCapability("appium:automationName", "UiAutomator2");
         caps.setCapability("appium:deviceName", "Android Emulator");
         caps.setCapability("appium:app", System.getProperty("user.dir") + "/apps/ToDo_1.24_APKPure.apk");
+        caps.setCapability("uiautomator2ServerInstallTimeout", 120000);
+        caps.setCapability("adbExecTimeout", 120000);
 
         driver = new AndroidDriver(new URL("http://127.0.0.1:4723"), caps);
     }
