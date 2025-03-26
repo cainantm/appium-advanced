@@ -11,8 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        api-level: [36]
-        target: [google_apis]
+        api-level: [34]
+        target: [default]
 
     steps:
       - uses: actions/checkout@v4
@@ -34,5 +34,6 @@ jobs:
         uses: ReactiveCircus/android-emulator-runner@v2.33.0
         with:
           api-level: ${{ matrix.api-level }}
+          arch: x86_64
           disable-animations: true
           script: mvn clean test -P android
