@@ -3,7 +3,7 @@
 <suite name="All Test Suite">
     <test verbose="2" preserve-order="true" name="tests.ToDoAndroidTest">
         <classes>
-                <class name="tests.ToDoAndroidTest"/>
+                <class name="runner.TestRunner"/>
         </classes>
     </test>
 </suite>
