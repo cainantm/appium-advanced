@@ -19,7 +19,7 @@ public class TestBase extends AbstractTestNGCucumberTests {
         caps.setCapability("appium:platformVersion", "11.0");
         caps.setCapability("appium:automationName", "UiAutomator2");
         caps.setCapability("appium:deviceName", "Android Emulator");
-        caps.setCapability("appium:app", "C:\\Users\\caina\\OneDrive\\Desktop\\Appium\\Appium-Advanced\\apps\\ToDo_1.24_APKPure.apk");
+        caps.setCapability("appium:app", System.getProperty("user.dir") + "/apps/ToDo_1.24_APKPure.apk");
 
         driver = new AndroidDriver(new URL("http://127.0.0.1:4723"), caps);
     }
