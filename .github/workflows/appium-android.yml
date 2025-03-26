@@ -32,7 +32,7 @@ jobs:
             appium &
             sleep 10
     - name: Run appium tests
-      uses: ReactiveCircus/android-emulator-runner@v2.35.0
+      uses: ReactiveCircus/android-emulator-runner@v2.33.0
       with:
         api-level: ${{ matrix.api-level }}
         target: ${{ matrix.target }}
